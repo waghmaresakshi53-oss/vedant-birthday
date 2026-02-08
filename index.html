@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happiest Birthday Vedant 🫂🤍</title>
 
+<!-- Social media / cover image setup -->
+<meta property="og:title" content="Happiest Birthday Vedant 🫂🤍">
+<meta property="og:description" content="A special birthday surprise 💖">
+<meta property="og:image" content="cover.jpg">
+<meta property="og:type" content="website">
+
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
 
@@ -18,7 +24,7 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
-  overflow:hidden;
+  overflow:auto; /* make all pages scrollable */
 }
 
 /* FLOATING BACKGROUND */
@@ -40,20 +46,18 @@ body{
 }
 
 /* SECTION */
-.section{
+.section, .heart-section, .tareef-section{
   display:none;
   width:94%;
   max-width:420px;
-  background:#fff7fb;
   border-radius:32px;
-  padding:26px 22px 34px;
+  padding:26px;
   text-align:center;
   box-shadow:0 25px 50px rgba(255,120,160,.25);
-  z-index:2;
-  max-height:80vh;
-  overflow-y:auto;
+  background:#fff7fb;
+  margin:16px 0;
 }
-.section.active{display:block}
+.section.active, .heart-section.active, .tareef-section.active{display:block;}
 
 img{
   width:100%;
@@ -110,18 +114,8 @@ button.wrong{
 
 /* HEART SECTION */
 .heart-section{
-  display:none;
-  width:94%;
-  max-width:420px;
   background:#ffe6f0;
-  border-radius:32px;
-  padding:26px;
-  text-align:center;
-  box-shadow:0 25px 50px rgba(255,120,160,.25);
-  max-height:80vh;
-  overflow-y:auto;
 }
-.heart-section.active{display:block;}
 .heart-section ul{
   list-style:none;
   padding:0;
@@ -140,18 +134,10 @@ button.wrong{
 
 /* TAREEF TERI SECTION */
 .tareef-section{
-  display:none;
-  width:94%;
-  max-width:420px;
+  background:#ffd1d1;
   max-height:70vh; 
   overflow-y:auto;
-  background:#ffd1d1;
-  border-radius:32px;
-  padding:26px;
-  text-align:center;
-  box-shadow:0 25px 50px rgba(255,120,160,.25);
 }
-.tareef-section.active{display:block;}
 .tareef-section p{
   text-align:left;
   white-space: pre-line;
@@ -278,18 +264,17 @@ umm tuzyasathi something likha hai..
     I’m always yours.    
     Happiest Birthday mahh Darlinggg!! 😚🎂  
   </p>
-  <button onclick="goRight('s9')">Thank you</button>
-  <button onclick="goRight('s9')">Kiss with thank you😚</button>
+  <button onclick="goRight('s9')">Next 💗</button>
 </div>
 
 <!-- SECTION 9 – I LOVE YOU FINAL -->
 <div class="section" id="s9">
   <h2 style="font-size:24px;">I love youuuu Vedant! 🥰💖</h2>
   <p>You mean the world to me 💗✨</p>
-  <button onclick="goRight('s10')">Next 💌</button>
+  <button onclick="goRight('s10')">Next 💋</button>
 </div>
 
-<!-- SECTION 10 – KISS IMAGE -->
+<!-- SECTION 10 – KISS -->
 <div class="section" id="s10">
   <img src="kiss.png">
 </div>
