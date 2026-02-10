@@ -3,82 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You 💖</title>
+<title>Happiest Birthday Vedant 🫂🤍</title>
+
+<!-- Social media preview -->
+<meta property="og:title" content="Happiest Birthday Vedant 🫂🤍">
+<meta property="og:description" content="A special birthday surprise 💖">
+<meta property="og:image" content="cover.jpg">
+<meta property="og:type" content="website">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*{box-sizing:border-box}
+
 body{
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#ffe6f0;
-    text-align:center;
-    overflow-y:auto;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#ffe6f0,#ffd1e8);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:auto;
 }
 
-section{
-    min-height:100vh;
-    padding:30px 20px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
+/* BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+.bg span{
+  position:absolute;
+  font-size:24px;
+  opacity:.25;
+  animation:floatbg 10s linear infinite;
+}
+@keyframes floatbg{
+  0%{transform:translateY(110vh)}
+  100%{transform:translateY(-20vh)}
 }
 
-button{
-    padding:12px 22px;
-    border:none;
-    border-radius:25px;
-    background:#ff4d88;
-    color:white;
-    font-size:16px;
-    margin-top:20px;
-    cursor:pointer;
+/* SECTIONS */
+.section, .heart-section, .tareef-section{
+  display:none;
+  width:94%;
+  max-width:420px;
+  background:#fff7fb;
+  border-radius:32px;
+  padding:26px;
+  text-align:center;
+  box-shadow:0 25px 50px rgba(255,120,160,.25);
+  margin:16px 0;
 }
+.section.active,
+.heart-section.active,
+.tareef-section.active{display:block;}
 
 img{
-    max-width:90%;
-    height:auto;
+  width:100%;
+  max-width:260px;
+  border-radius:26px;
+  margin:16px auto;
+}
+
+h2{color:#6a2c4a;font-weight:500}
+p{color:#6a2c4a;font-size:15px;line-height:1.7}
+
+button{
+  width:85%;
+  max-width:270px;
+  margin:10px auto;
+  padding:14px;
+  border:none;
+  border-radius:999px;
+  background:linear-gradient(135deg,#ffb3cc,#ffc2d9);
+  font-size:15px;
+  color:#6a2c4a;
+  cursor:pointer;
+}
+
+button.wrong{
+  animation:shake .3s;
+  box-shadow:0 0 0 3px #ff4d6d;
+}
+@keyframes shake{
+  0%{transform:translateX(0)}
+  25%{transform:translateX(-6px)}
+  50%{transform:translateX(6px)}
+  75%{transform:translateX(-6px)}
+  100%{transform:translateX(0)}
+}
+
+/* FLOAT ICONS */
+.float{
+  position:fixed;
+  font-size:24px;
+  animation:float 1.6s ease forwards;
+  pointer-events:none;
+}
+@keyframes float{
+  to{transform:translateY(-160px) scale(1.6);opacity:0}
+}
+
+/* LETTER */
+.envelope{background:#ffe1ec;border-radius:18px;padding:18px;margin-top:16px}
+.letter{display:none;background:#fff;border-radius:16px;padding:16px;margin-top:12px;max-height:220px;overflow:auto}
+
+/* HEART SECTION */
+.heart-section{background:#ffe6f0}
+.heart-section ul{list-style:none;padding:0}
+.heart-section li::before{content:"💖 ";}
+
+/* TAREEF */
+.tareef-section{
+  background:#ffd1d1;
+  max-height:70vh;
+  overflow-y:auto;
+}
+.tareef-section p{
+  white-space:pre-line;
+  text-align:left;
 }
 </style>
 </head>
 
 <body>
 
-<!-- MUSIC -->
-<audio id="bgMusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
+<div class="bg">
+  <span style="left:10%">💗</span><span style="left:30%">💗</span>
+  <span style="left:50%">💗</span><span style="left:70%">💗</span>
+  <span style="left:90%">💗</span>
+</div>
+
+<!-- INTRO PAGE -->
+<div class="section active" id="s0">
+  <h2>Heyy sweetheart! 💗</h2>
+  <p>
+Ha fkt ek try ahey,  
+kahi chuk zali asel tr samjun ghe  
+karan this is my first time..
+  </p>
+  <button onclick="startExperience()">Click to start 💖</button>
+</div>
 
 <!-- SECTION 1 -->
-<section id="start">
-    <h1>Hey Darlingg💕</h1>
-    <p> ek try dila hai banvayla.. sorry jr kahi mistake kivva kami asel tr.. cause this is my first time..😌</p>
-    <button onclick="startMusic()">Tap to Begin 💖</button>
-</section>
+<div class="section" id="s1">
+  <img src="me.png">
+  <h2>Hellooii my love ❤️</h2>
+  <p>Shishtit best wala choose krr.. cause only one is correct 😌</p>
+  <button onclick="wrong(this)">Hi</button>
+  <button onclick="wrong(this)">Hey❣️</button>
+  <button onclick="goRight('s2')">Hello my sunshine!❤️</button>
+</div>
 
 <!-- SECTION 2 -->
-<section id="love" style="display:none;">
-    <h1>I Love Youuu 💘</h1>
-    <p>You mean everything to me 🌸</p>
-    <button onclick="showKiss()">Next 💋</button>
-</section>
+<div class="section" id="s2">
+  <h2>Finally ek varsha thamblya nantr it’s your birthdayyy!! 🎊</h2>
+  <img src="pappi.png">
+  <p>
+And of course this is another year of you being
+the most precious part of my life my baby!🥺🤍
+  </p>
+  <button onclick="goRight('s3')">Kiss back😚</button>
+  <button onclick="goRight('s3')">Blush😳</button>
+</div>
 
 <!-- SECTION 3 -->
-<section id="kiss" style="display:none;">
-    <h1>Muahhhh 😘</h1>
-    <img src="kiss.png">
-</section>
+<div class="heart-section" id="s3">
+  <h2> Baby❤️, here’s what I feel about you</h2>
+  <ul>
+    <li>You make me smile without any efforts..🥰</li>
+    <li>Every moment with you feels absolutely magical..✨</li>
+    <li>Even when we fight, I love us more 💗</li>
+  </ul>
+  <button onclick="goRight('s4')">Next 💌</button>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section" id="s4">
+  <img src="bouquet.jpg">
+  <h2>Mazya ful sarkhya fool sathi hai fooola😂🌹</h2>
+  <p>jr mi tithe aste tr, I’d hand this to you myself.. But Sir please accept this😌.</p>
+  <button onclick="goRight('s5')">Take it</button>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section" id="s5">
+  <div class="envelope">
+    <p>💌 Do you wanna open it?</p>
+    <button onclick="openLetter()">Yes👀</button>
+    <button onclick="wrong(this)">No😒</button>
+    <div class="letter" id="letter">
+      <p>
+Happiest Birthday, darling 🫂
+I know mi khup bhandte tuzyasobat, ani mala mahit ahe tula mazyamule khup traas suddha zala asel.
+Pn yaar, ek goshta khari ahe I seriously, genuinely love you...
+Aata tuzyashi nahi tr konashi bhandnar mi?
+You are my comfort, my safe place, my moonlight on the darkest days.
+You are my only person...❤️
+aaj je apan sobat ahot, te khup precious ahe...
+Jashe atta ahot, tashech pudhe pn ekmekansobat rahu, yahi meri iccha..
+mala ekch goshta pahije, lifetime tuza sahavas😌
+Once again, Happiest birthday.. I’m proud of you, I choose you, and I’ll keep choosing you Honey..
+      </p>
+    </div>
+  </div>
+  <button onclick="goRight('s6')">Next 💌</button>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section" id="s6">
+  <p>Soo you know it but still, right manje ho and left manje nahi.. Tell me now What will you choose?</p>
+  <button onclick="goRight('s7')">Right</button>
+  <button onclick="wrong(this)">Left</button>
+</div>
+
+<!-- SECTION 7 -->
+<div class="tareef-section section" id="s7">
+  <h2>Tareef Teri 💖</h2>
+  <p>
+You are the kind of person who doesn’t show strength loudly, but proves it quietly every day..
+You’re not perfect and that’s exactly why you’re real.
+umm tuzyasathi something likha hai..
+
+रागीट स्वभावातही प्रेम तुझं निर्मळ वाहतं,
+शंकेआड लपलेलं हृदय तुझं पूर्णपणे माझच राहतं,
+डोळ्यात तुझ्या चांदण्यासारखं सौंदर्य विसावलेलं,
+त्या नजरेत हरवताना माझं संपूर्ण जग थांबलेलं.🫂
+
+मिशीवर तुझ्या शोभतो शांत अभिमानाचा साज,
+मिठीत तुझ्या विरघळते मी, विसरते सगळं भान.
+हृदयाच्या ठोक्यात तुझ्या मला विसावा मिळतो,
+हातात हात घेतलास की आयुष्य हळूच स्थिर होतं.😌
+
+फक्त तुझ्याच प्रकाशात वाहतं..💗
+  </p>
+  <button onclick="goRight('s8')">Next 💌</button>
+</div>
+
+<!-- SECTION 8 -->
+<div class="section" id="s8">
+  <img src="hug.png">
+  <h2>I wish I was with you 🫂🫠</h2>
+  <p>
+But until then, know this..
+I’m always yours.
+Happiest Birthday mahh Darlinggg!! 😚🎂
+  </p>
+  <button onclick="goRight('s9')">Next 💗</button>
+</div>
+
+<!-- SECTION 9 -->
+<div class="section" id="s9">
+  <h2>I love youuuu Vedant! 🥰💖</h2>
+  <p>You mean the world to me 💗✨</p>
+  <button onclick="goRight('s10')">Next 💋</button>
+</div>
+
+<!-- SECTION 10 -->
+<div class="section" id="s10">
+  <img src="kiss.png">
+</div>
 
 <script>
-function startMusic(){
-    const music = document.getElementById("bgMusic");
-    music.play();
-    document.getElementById("start").style.display="none";
-    document.getElementById("love").style.display="flex";
+const bgMusic = new Audio("music.mp3");
+bgMusic.loop = true;
+bgMusic.volume = 0.4;
+
+const ctx=new(window.AudioContext||window.webkitAudioContext)();
+
+function sound(f=600,t=.06){
+  const o=ctx.createOscillator(),g=ctx.createGain();
+  o.frequency.value=f;o.connect(g);g.connect(ctx.destination);
+  o.start();
+  g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+t);
+  o.stop(ctx.currentTime+t);
 }
 
-function showKiss(){
-    document.getElementById("love").style.display="none";
-    document.getElementById("kiss").style.display="flex";
+function startExperience(){
+  bgMusic.play().catch(()=>{});
+  go('s1');
+}
+
+function go(id){
+  document.querySelectorAll('.section, .heart-section, .tareef-section')
+    .forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function goRight(id){
+  sound(900,.1);
+  floaties(["💗","✨","🌸"]);
+  setTimeout(()=>go(id),300);
+}
+
+function wrong(b){
+  sound(300,.05);
+  b.classList.remove("wrong");
+  void b.offsetWidth;
+  b.classList.add("wrong");
+  floaties(["💔"]);
+}
+
+function floaties(arr){
+  for(let i=0;i<6;i++){
+    const f=document.createElement("div");
+    f.className="float";
+    f.innerText=arr[Math.floor(Math.random()*arr.length)];
+    f.style.left=Math.random()*100+"vw";
+    f.style.top="75%";
+    document.body.appendChild(f);
+    setTimeout(()=>f.remove(),1600);
+  }
+}
+
+function openLetter(){
+  sound(700,.08);
+  document.getElementById("letter").style.display="block";
+  floaties(["💌","💗"]);
 }
 </script>
 
