@@ -3,273 +3,82 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happiest Birthday Vedant 🫂🤍</title>
+<title>For You 💖</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-
-*{box-sizing:border-box}
-
 body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(180deg,#ffe6f0,#ffd1e8);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  overflow:hidden;
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background:#ffe6f0;
+    text-align:center;
+    overflow-y:auto;
 }
 
-/* BACKGROUND FLOATING HEARTS */
-.bg{
-  position:fixed;
-  inset:0;
-  z-index:0;
-  pointer-events:none;
+section{
+    min-height:100vh;
+    padding:30px 20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
-.bg span{
-  position:absolute;
-  font-size:24px;
-  opacity:.25;
-  animation:floatbg 10s linear infinite;
-}
-@keyframes floatbg{
-  0%{transform:translateY(110vh)}
-  100%{transform:translateY(-20vh)}
-}
-
-/* SECTION */
-.section, .heart-section{
-  display:none;
-  width:94%;
-  max-width:420px;
-  max-height:80vh;
-  overflow-y:auto;
-  background:#fff7fb;
-  border-radius:32px;
-  padding:26px 22px 34px;
-  text-align:center;
-  box-shadow:0 25px 50px rgba(255,120,160,.25);
-  z-index:2;
-}
-.section.active, .heart-section.active{display:block}
-
-img{
-  width:100%;
-  max-width:260px;
-  border-radius:26px;
-  margin:16px auto;
-}
-
-h2{color:#6a2c4a;font-weight:500}
-p{color:#6a2c4a;font-size:15px;line-height:1.7}
 
 button{
-  width:85%;
-  max-width:270px;
-  margin:10px auto;
-  padding:14px;
-  border:none;
-  border-radius:999px;
-  background:linear-gradient(135deg,#ffb3cc,#ffc2d9);
-  font-size:15px;
-  color:#6a2c4a;
-  cursor:pointer;
+    padding:12px 22px;
+    border:none;
+    border-radius:25px;
+    background:#ff4d88;
+    color:white;
+    font-size:16px;
+    margin-top:20px;
+    cursor:pointer;
 }
 
-button.wrong{
-  animation:shake .3s;
-  box-shadow:0 0 0 3px #ff4d6d;
-}
-@keyframes shake{
-  0%{transform:translateX(0)}
-  25%{transform:translateX(-6px)}
-  50%{transform:translateX(6px)}
-  75%{transform:translateX(-6px)}
-  100%{transform:translateX(0)}
-}
-
-/* FLOAT ICONS */
-.float{
-  position:fixed;
-  font-size:24px;
-  animation:float 1.6s ease forwards;
-  pointer-events:none;
-}
-@keyframes float{
-  to{transform:translateY(-160px) scale(1.6);opacity:0}
-}
-
-/* LETTER */
-.envelope{background:#ffe1ec;border-radius:18px;padding:18px}
-.letter{
-  display:none;
-  background:#fff;
-  border-radius:16px;
-  padding:16px;
-  margin-top:12px;
-  max-height:220px;
-  overflow:auto;
-}
-
-/* HEART BULLETS */
-.heart-section ul{
-  list-style:none;
-  padding:0;
-}
-.heart-section li::before{
-  content:"💖 ";
-}
-
-/* TAREEF TERI */
-.tareef-section{
-  background:#ffd1d1;
-}
-.tareef-section p{
-  text-align:left;
-  white-space:pre-line;
+img{
+    max-width:90%;
+    height:auto;
 }
 </style>
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
-<div class="bg">
-  <span style="left:10%">💗</span><span style="left:30%">💗</span>
-  <span style="left:50%">💗</span><span style="left:70%">💗</span>
-  <span style="left:90%">💗</span>
-</div>
-
 <!-- MUSIC -->
 <audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <!-- SECTION 1 -->
-<div class="section active" id="s1">
-  <img src="me.png">
-  <h2>Hellooii my love ❤️</h2>
-  <p>Only one option is correct 😌</p>
-  <button onclick="wrong(this)">Hi</button>
-  <button onclick="wrong(this)">Hey❣️</button>
-  <button onclick="goRight('s2')">Hello my sunshine!❤️</button>
-</div>
+<section id="start">
+    <h1>Hey Darlingg💕</h1>
+    <p> ek try dila hai banvayla.. sorry jr kahi mistake kivva kami asel tr.. cause this is my first time..😌</p>
+    <button onclick="startMusic()">Tap to Begin 💖</button>
+</section>
 
 <!-- SECTION 2 -->
-<div class="section" id="s2">
-  <h2>It’s your birthdayyy!! 🎊</h2>
-  <img src="pappi.png">
-  <p>You are the most precious part of my life 🥺🤍</p>
-  <button onclick="goRight('s3')">Kiss back 😚</button>
-  <button onclick="goRight('s3')">Blush 😳</button>
-</div>
+<section id="love" style="display:none;">
+    <h1>I Love Youuu 💘</h1>
+    <p>You mean everything to me 🌸</p>
+    <button onclick="showKiss()">Next 💋</button>
+</section>
 
 <!-- SECTION 3 -->
-<div class="heart-section" id="s3">
-  <h2>What I feel about you ❤️</h2>
-  <ul>
-    <li>You make me smile effortlessly</li>
-    <li>Every moment feels magical</li>
-    <li>I choose us, always 💗</li>
-  </ul>
-  <button onclick="goRight('s4')">Next 💌</button>
-</div>
-
-<!-- SECTION 4 -->
-<div class="section" id="s4">
-  <img src="bouquet.jpg">
-  <h2>This is for you 🌹</h2>
-  <button onclick="goRight('s5')">Take it</button>
-</div>
-
-<!-- SECTION 5 – LETTER -->
-<div class="section" id="s5">
-  <div class="envelope">
-    <p>💌 Open the letter?</p>
-    <button onclick="openLetter()">Yes 👀</button>
-    <button onclick="wrong(this)">No 😒</button>
-    <div class="letter" id="letter">
-      <p>
-Happiest Birthday, darling 🫂  
-I genuinely love you…  
-You are my comfort, my person, my home ❤️
-      </p>
-    </div>
-  </div>
-  <p>Right or Left?</p>
-  <button onclick="goRight('s6')">Right</button>
-  <button onclick="wrong(this)">Left</button>
-</div>
-
-<!-- SECTION 6 – TAREEF TERI -->
-<div class="section tareef-section" id="s6">
-  <h2>Tareef Teri 💖</h2>
-  <p>
-(Your poetry stays exactly as written 💗)
-  </p>
-  <button onclick="goRight('s7')">Next 💌</button>
-</div>
-
-<!-- SECTION 7 – HUG -->
-<div class="section" id="s7">
-  <img src="hug.png">
-  <h2>I wish I was with you 🫂</h2>
-  <button onclick="goRight('s8')">Thank you</button>
-  <button onclick="goRight('s8')">Kiss with thank you 😚</button>
-</div>
-
-<!-- SECTION 8 – I LOVE YOU -->
-<div class="section" id="s8">
-  <h2>I love youuuu Vedant 🥰💖</h2>
-  <button onclick="goRight('s9')">Next 💗</button>
-</div>
-
-<!-- SECTION 9 – KISS -->
-<div class="section" id="s9">
-  <img src="kiss.png">
-</div>
+<section id="kiss" style="display:none;">
+    <h1>Muahhhh 😘</h1>
+    <img src="kiss.png">
+</section>
 
 <script>
-const ctx=new(window.AudioContext||window.webkitAudioContext)();
-let musicStarted=false;
-
 function startMusic(){
-  if(!musicStarted){
-    const m=document.getElementById("bgMusic");
-    m.volume=0.6;
-    m.play().catch(()=>{});
-    musicStarted=true;
-  }
+    const music = document.getElementById("bgMusic");
+    music.play();
+    document.getElementById("start").style.display="none";
+    document.getElementById("love").style.display="flex";
 }
 
-function sound(f=600,t=.06){
-  const o=ctx.createOscillator(),g=ctx.createGain();
-  o.frequency.value=f;o.connect(g);g.connect(ctx.destination);
-  o.start();g.gain.exponentialRampToValueAtTime(.0001,ctx.currentTime+t);
-  o.stop(ctx.currentTime+t);
-}
-
-function go(id){
-  document.querySelectorAll('.section,.heart-section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
-
-function goRight(id){
-  startMusic();
-  sound(900,.1);
-  setTimeout(()=>go(id),300);
-}
-
-function wrong(b){
-  sound(300,.05);
-  b.classList.remove("wrong");void b.offsetWidth;b.classList.add("wrong");
-}
-
-function openLetter(){
-  startMusic();
-  document.getElementById("letter").style.display="block";
+function showKiss(){
+    document.getElementById("love").style.display="none";
+    document.getElementById("kiss").style.display="flex";
 }
 </script>
 
