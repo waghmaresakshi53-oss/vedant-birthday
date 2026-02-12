@@ -241,9 +241,49 @@ umm tuzyasathi something likha hai.. <br>
 काही मागणं नाही, काही सिद्ध करायचं नाही मला,
 फक्त हातात हात दिलास आणि आयुष्य तुझ्याच प्रकाशात वाहतं...
 फक्त तुझ्याच प्रकाशात वाहतं..💗</p>
-  <button onclick="goRight('s8')"> wowie.. next❣️</button>
+  <button onclick="goRight('sReal')"> wowie.. next❣️</button>
 </div>
 
+  <!-- SECTION: REAL LOVE -->
+<div class="section" id="sReal">
+  <h2> No matter what, it'll always be us..! ❤️</h2>
+  <p>
+We fight.  
+We misunderstand.  
+We overthink.  
+
+But at the end of every chaos…  
+we still choose each other...
+
+And that’s what makes this real. 🫂😌
+  </p>
+  <button onclick="goRight('sCake')">Next 🎂</button>
+</div>
+
+  <!-- SECTION: CAKE -->
+<div class="section" id="sCake">
+  <h2>Make a wish babe... 🎂✨</h2>
+
+  <div id="cakeBox" style="position:relative;">
+    <img src="cake.png" id="cakeImage">
+
+    <div id="candles" style="
+      position:absolute;
+      top:18%;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:28px;">
+      🕯🕯🕯
+    </div>
+  </div>
+
+  <button id="blowBtn" onclick="blowCandles()"> funki maar and click this🎂</button>
+
+  <button id="cutBtn" style="display:none;" onclick="cutCake()">
+    now let's celebrate.. cut the cake..🍰
+  </button>
+</div>
+  
 <!-- SECTION 8 -->
 <div class="section" id="s8">
   <img src="hug.png">
@@ -269,6 +309,8 @@ umm tuzyasathi something likha hai.. <br>
 <script>
 /* MUSIC */
 const bgMusic = new Audio("music.mp3");
+  const cheerSound = new Audio("cheer.mp3");
+cheerSound.volume = 0.8;
 bgMusic.loop = true;
 bgMusic.volume = 0.4;
 
@@ -332,6 +374,46 @@ function openLetter(){
   document.getElementById("letter").style.display="block";
   floaties(["💌","💗"]);
 }
+  function blowCandles(){
+  sound(500,.1);
+
+  document.getElementById("candles").style.display = "none";
+  document.getElementById("blowBtn").style.display = "none";
+  document.getElementById("cutBtn").style.display = "inline-block";
+
+  for(let i=0;i<20;i++){
+    const conf = document.createElement("div");
+    conf.className = "float";
+    conf.innerText = ["🎉","✨","💖","🎊"][Math.floor(Math.random()*4)];
+    conf.style.left = Math.random()*100 + "vw";
+    conf.style.top = "70%";
+    document.body.appendChild(conf);
+    setTimeout(()=>conf.remove(),1600);
+  }
+  }
+  function cutCake(){
+  sound(900,.12);
+
+  // play cheering sound
+  cheerSound.currentTime = 0;
+  cheerSound.play();
+
+  // extra confetti
+  for(let i=0;i<30;i++){
+    const conf = document.createElement("div");
+    conf.className = "float";
+    conf.innerText = ["🎉","🎊","✨","💖","🥳"][Math.floor(Math.random()*5)];
+    conf.style.left = Math.random()*100 + "vw";
+    conf.style.top = "70%";
+    document.body.appendChild(conf);
+    setTimeout(()=>conf.remove(),1600);
+  }
+
+  // go to next section after 2 seconds
+  setTimeout(()=>{
+    go('s8');
+  },2000);
+  }
 </script>
 
 </body>
