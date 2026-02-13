@@ -285,7 +285,7 @@ Once again, Happiest birthday.. I’m proud of you, I choose you, and I’ll kee
   <!-- SECTION: OUR JOURNEY -->
 <div class="section" id="sJourney" style="max-height:75vh; overflow-y:auto;">
 
-  <h2>आपली journey 🤍</h2>
+  <h2>Our journey 🤍</h2>
 
   <div class="memory">
     <img src="journey1.png">
@@ -293,17 +293,17 @@ Once again, Happiest birthday.. I’m proud of you, I choose you, and I’ll kee
     <p>
       26/10/2023
 “तू हुशार आहेस ना?”  
-इतक्याशा प्रश्नातून सुरू झालेली गोष्ट…  
-आज आयुष्याचा भाग झाली.😌🥹
+evdhushya question madhun start zaleli goshta…  
+aaj life cha part zali..😌🥹
     </p>
   </div>
 
   <div class="memory">
     <img src="journey2.png">
-    <h3>ID shodhaychi Challenge</h3>
+    <h3>ID shodhaych Challenge😂</h3>
     <p>
-तुला challenge दिलं होतं ID शोधायला…  
-पण शेवटी मीच तुझ्या हातावर माझं नाव लिहिलं...🫶
+tula challenge dilta ID shodhayla..  
+pn shevti mich tuzya hatavr mazi id lihili...🫶
     </p>
   </div>
 
@@ -311,8 +311,8 @@ Once again, Happiest birthday.. I’m proud of you, I choose you, and I’ll kee
     <img src="journey3.png">
     <h3>Footpath Moments</h3>
     <p>
-BRT पर्यंत चालताना, हातात हात…  
-रस्ता छोटा होता, पण क्षण खूप मोठे..🥹
+BRT paryant chaltana, hatat haat..  
+rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
     </p>
   </div>
   
@@ -336,7 +336,9 @@ BRT पर्यंत चालताना, हातात हात…
 
 </section>
 <div class="journey-next">
-    <button onclick="goRight('s6')">Continue Our Story 🤍</button>
+    <button onclick="showSection('s6')">
+    Continue Our Story 🤍
+    </button>
 </div>
 <!-- SECTION 6 -->
 <div class="section" id="s6">
@@ -548,11 +550,17 @@ function openLetter(){
   }
 </script>
 <script>
-function goToSection6() {
-    document.getElementById("s6").scrollIntoView({
-        behavior: "smooth"
+function showSection(s6) {
+
+    // Hide all sections
+    document.querySelectorAll(".section").forEach(function(sec) {
+        sec.style.display = "none";
     });
+
+    // Show selected section
+    document.getElementByIds6).style.display = "block";
 }
+</script>
 </script>
 </body>
 </html>
