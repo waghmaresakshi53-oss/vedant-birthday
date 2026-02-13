@@ -332,14 +332,14 @@ rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
                 समजलं… आपलं “आपण” अजून जिवंत आहे.🫂
             </p>
         </div>
-      </div>
-
-</section>
+  
 <div class="journey-next">
     <button onclick="showSection('s6')">
     Continue Our Story 🤍
     </button>
 </div>
+    </div>
+  
 <!-- SECTION 6 -->
 <div class="section" id="s6">
   <p> Soo, you already know it but still right manje ho and left manje nahi.. so kara sir choose ata..😌</p>
@@ -550,17 +550,18 @@ function openLetter(){
   }
 </script>
 <script>
-function showSection(s6) {
+function showSection(sectionId) {
 
-    // Hide all sections
     document.querySelectorAll(".section").forEach(function(sec) {
         sec.style.display = "none";
     });
 
-    // Show selected section
-    document.getElementByIds6).style.display = "block";
+    const selected = document.getElementById(sectionId);
+    selected.style.display = "block";
+
+    // Force visibility fix
+    selected.style.opacity = "1";
 }
-</script>
 </script>
 </body>
 </html>
