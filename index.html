@@ -196,7 +196,19 @@ button.wrong{
 .journey-next button:hover {
     transform: scale(1.05);
 }
-</style>
+
+  .section {
+  display: none;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+#s6 {
+  background: #ffd1d1;
+  color: black;
+}
+  </style>
 </head>
 
 <body>
@@ -341,7 +353,7 @@ rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
     </div>
   
 <!-- SECTION 6 -->
-<div class="section" id="s6">
+<div class="section" id="s6" style="display:none;">
   <p> Soo, you already know it but still right manje ho and left manje nahi.. so kara sir choose ata..😌</p>
   <button onclick="goRight('s7')">Right</button>
   <button onclick="wrong(this)">Left</button>
@@ -550,17 +562,13 @@ function openLetter(){
   }
 </script>
 <script>
-function showSection(sectionId) {
+function showSection(id) {
+  document.querySelectorAll(".section").forEach(function(sec) {
+    sec.style.display = "none";
+  });
 
-    document.querySelectorAll(".section").forEach(function(sec) {
-        sec.style.display = "none";
-    });
-
-    const selected = document.getElementById(sectionId);
-    selected.style.display = "block";
-
-    // Force visibility fix
-    selected.style.opacity = "1";
+  const selected = document.getElementById(id);
+  selected.style.display = "block";
 }
 </script>
 </body>
