@@ -125,6 +125,77 @@ button.wrong{
   white-space:pre-line;
   text-align:left;
 }
+  #journey {
+    padding: 60px 20px;
+    background: linear-gradient(to bottom, #fff0f5, #ffffff);
+    text-align: center;
+}
+
+.journey-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #ff4d88;
+}
+
+.moment {
+    margin-bottom: 60px;
+}
+
+.journey-img {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.journey-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+    max-width: 600px;
+    margin: auto;
+}
+
+.reunion-poem {
+    background: #ffe6f0;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.reunion-poem h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #ff4d88;
+}
+
+.reunion-poem p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+}
+  .journey-next {
+    margin-top: 40px;
+}
+
+.journey-next button {
+    padding: 14px 30px;
+    font-size: 18px;
+    background: linear-gradient(45deg, #ff4d88, #ff99cc);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.journey-next button:hover {
+    transform: scale(1.05);
+}
 </style>
 </head>
 
@@ -209,9 +280,64 @@ Once again, Happiest birthday.. I’m proud of you, I choose you, and I’ll kee
       </p>
     </div>
   </div>
-  <button onclick="goRight('s6')">Next 💌</button>
+  <button onclick="goRight('sJourney')">Next 💌</button>
 </div>
+  <!-- SECTION: OUR JOURNEY -->
+<div class="section" id="sJourney" style="max-height:75vh; overflow-y:auto;">
 
+  <h2>आपली journey 🤍</h2>
+
+  <div class="memory">
+    <img src="journey1.png">
+    <h3>the start..Exam Hall</h3>
+    <p>
+      26/10/2023
+“तू हुशार आहेस ना?”  
+इतक्याशा प्रश्नातून सुरू झालेली गोष्ट…  
+आज आयुष्याचा भाग झाली.😌🥹
+    </p>
+  </div>
+
+  <div class="memory">
+    <img src="journey2.png">
+    <h3>ID shodhaychi Challenge</h3>
+    <p>
+तुला challenge दिलं होतं ID शोधायला…  
+पण शेवटी मीच तुझ्या हातावर माझं नाव लिहिलं...🫶
+    </p>
+  </div>
+
+  <div class="memory">
+    <img src="journey3.png">
+    <h3>Footpath Moments</h3>
+    <p>
+BRT पर्यंत चालताना, हातात हात…  
+रस्ता छोटा होता, पण क्षण खूप मोठे..🥹
+    </p>
+  </div>
+  
+<!-- 7️⃣ Reunion (Poem Only) -->
+    <div class="moment reunion-only">
+        <div class="reunion-poem">
+            <h2>We Reunited 🤍</h2>
+            <p>
+                पुन्हा भेटलो आपण… <br>
+                हरवलेले शब्द पुन्हा सापडले, <br>
+                तुटलेले धागे हळूच गुंफले गेले. <br><br>
+
+                दूर गेलो होतो क्षणभर दोघे, <br>
+                पण मन कधी वेगळं झालंच नव्हतं. <br><br>
+
+                हात पुन्हा हातात घेतला जेव्हा, <br>
+                समजलं… आपलं “आपण” अजून जिवंत आहे.🫂
+            </p>
+        </div>
+      </div>
+
+</section>
+<div class="journey-next">
+    <button onclick="goToSection6()">Continue Our Story 🤍</button>
+</div>
 <!-- SECTION 6 -->
 <div class="section" id="s6">
   <p> Soo, you already know it but still right manje ho and left manje nahi.. so kara sir choose ata..😌</p>
@@ -421,6 +547,12 @@ function openLetter(){
   },6000);
   }
 </script>
-
+<script>
+function goToSection6() {
+    document.getElementById("section6").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+</script>
 </body>
 </html>
