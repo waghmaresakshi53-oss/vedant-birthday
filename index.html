@@ -94,7 +94,18 @@ button.wrong{
   75%{transform:translateX(-6px)}
   100%{transform:translateX(0)}
 }
+button{
+  transition: all 0.3s ease;
+}
 
+button:hover{
+  transform:scale(1.08);
+  box-shadow:0 8px 20px rgba(255,105,180,0.35);
+}
+
+button:active{
+  transform:scale(0.96);
+}
 /* FLOAT ICONS */
 .float{
   position:fixed;
