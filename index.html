@@ -197,13 +197,23 @@ button.wrong{
     transform: scale(1.05);
 }
 
-  .section {
+.section {
   display: none;
-  min-height: 100vh;
-  padding: 40px;
-  box-sizing: border-box;
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffd1d1;
 }
-
+  .section.active {
+  display: block;
+  }
+  .content-box {
+  background: white;
+  display: inline-block;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  max-width: 500px;
+  }
 #s6 {
   background: #ffd1d1;
   color: black;
@@ -234,6 +244,7 @@ karan this is my first time to make such website😭..
 
 <!-- SECTION 1 -->
 <div class="section" id="s1">
+  <div class="content-box">
   <img src="me.png">
   <h2>Hellooii my love ❤️</h2>
   <p>Shishtit best wala choose krr.. cause only one is correct 😌</p>
@@ -244,6 +255,7 @@ karan this is my first time to make such website😭..
 
 <!-- SECTION 2 -->
 <div class="section" id="s2">
+  <div class="content-box">
   <h2>Finally ek varsha thamblya nantr it’s your birthdayyy!!yayy🎊</h2>
   <img src="pappi.png">
   <p>
@@ -256,6 +268,7 @@ the most precious part of my life my baby!🥺🤍
 
 <!-- SECTION 3 -->
 <div class="heart-section" id="s3">
+  <div class="content-box">
   <h2>Baby❤️, here’s what I feel about you</h2>
   <ul>
     <li>You make me smile without any efforts..🥰</li>
@@ -267,6 +280,7 @@ the most precious part of my life my baby!🥺🤍
 
 <!-- SECTION 4 -->
 <div class="section" id="s4">
+  <div class="content-box">
   <img src="bouquet.jpg">
   <h2>Mazya ful sarkhya fool sathi hai fooola😂🌹</h2>
   <p>jr mi tithe aste tr, I’d hand this to you myself.. but sir please accept it..</p>
@@ -300,6 +314,7 @@ Once again, Happiest birthday.. I’m proud of you, I choose you, and I’ll kee
   <h2>Our journey 🤍</h2>
 
   <div class="memory">
+    <div class="content-box">
     <img src="journey1.png">
     <h3>the start..Exam Hall</h3>
     <p>
@@ -311,6 +326,7 @@ aaj life cha part zali..😌🥹
   </div>
 
   <div class="memory">
+    <div class="content-box">
     <img src="journey2.png">
     <h3>ID shodhaych Challenge😂</h3>
     <p>
@@ -320,6 +336,7 @@ pn shevti mich tuzya hatavr mazi id lihili...🫶
   </div>
 
   <div class="memory">
+    <div class="content-box">
     <img src="journey3.png">
     <h3>Footpath Moments</h3>
     <p>
@@ -354,6 +371,7 @@ rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
   
 <!-- SECTION 6 -->
 <div class="section" id="s6">
+  <div class="content-box">
   <p> Soo, you already know it but still right manje ho and left manje nahi.. so kara sir choose ata..😌</p>
   <button onclick="goRight('s7')">Right</button>
   <button onclick="wrong(this)">Left</button>
@@ -361,6 +379,7 @@ rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
 
 <!-- SECTION 7 -->
 <div class="section tareef-section" id="s7">
+  <div class="content-box">
   <h2>Tareef Teri 💖</h2>
   <p>You are the kind of person who doesn’t show strength loudly, but proves it quietly every day.. Your presence itself gives reassurance..  
 You’re not perfect and that’s exactly why you’re real. I don’t need perfection. I admire the way you try, the way you stay even when things get hard, and the way you choose effort over walking away.   
@@ -386,6 +405,7 @@ umm tuzyasathi something likha hai.. <br>
 
   <!-- SECTION: REAL LOVE -->
 <div class="section" id="sReal">
+  <div class="content-box">
   <h2> No matter what, it'll always be us..! ❤️</h2>
   <p>
 We fight.  
@@ -402,6 +422,7 @@ And that’s what makes this real. 🫂😌
 
   <!-- SECTION: CAKE -->
 <div class="section" id="sCake">
+  <div class="content-box">
   <h2>Make a wish babe... 🎂✨</h2>
 
   <div id="cakeBox" style="position:relative;">
@@ -426,6 +447,7 @@ And that’s what makes this real. 🫂😌
   
 <!-- SECTION 8 -->
 <div class="section" id="s8">
+  <div class="content-box">
   <img src="hug.png">
   <h2>Aahhhh😫 I wish I was with youu🫠🫂</h2>
   <p> But until then, know this..     
@@ -436,6 +458,7 @@ And that’s what makes this real. 🫂😌
 
 <!-- SECTION 9 -->
 <div class="section" id="s9">
+  <div class="content-box">
   <h2>I love youuuu Vedant! 😚💖</h2>
   <p>You mean the world to meee!!! 💗✨</p> 
   <button onclick="goRight('s10')">Next 💋</button>
@@ -443,6 +466,7 @@ And that’s what makes this real. 🫂😌
 
 <!-- SECTION 10 -->
 <div class="section" id="s10">
+  <div class="content-box">
   <img src="kiss.png">
 </div>
 
@@ -543,7 +567,10 @@ function openLetter(){
   // play cheering sound
   cheerSound.currentTime = 0;
   cheerSound.play();
-
+setTimeout(() => {
+    go(id);
+  }, 2500); // 2.5 seconds delay
+  }
   // extra confetti
   for(let i=0;i<30;i++){
     const conf = document.createElement("div");
