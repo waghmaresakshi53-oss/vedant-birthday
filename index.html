@@ -346,15 +346,14 @@ rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
         </div>
     </div>
 <div class="journey-next">
-    <button onclick="showSection('s6')">
+    <button onclick="goRight('s6')">
     Continue Our Story 🤍
     </button> </div>
 </div>
     
   
 <!-- SECTION 6 -->
-<div class="section" id="s6" style="display:none;">
-  <h1 style="color:black;">S6 IS WORKING</h1>
+<div class="section" id="s6">
   <p> Soo, you already know it but still right manje ho and left manje nahi.. so kara sir choose ata..😌</p>
   <button onclick="goRight('s7')">Right</button>
   <button onclick="wrong(this)">Left</button>
@@ -562,15 +561,6 @@ function openLetter(){
   },6000);
   }
 </script>
-<script>
-function showSection(id) {
-  document.querySelectorAll(".section").forEach(function(sec) {
-    sec.style.display = "none";
-  });
 
-  const selected = document.getElementById(id);
-  selected.style.display = "block";
-}
-</script>
 </body>
 </html>
