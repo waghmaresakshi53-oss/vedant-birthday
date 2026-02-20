@@ -350,11 +350,43 @@ rasta chota hota, pn kshan, moments khup preciousani mothe hote..🥹
         </div>
     </div>
 <div class="journey-next">
-    <button onclick="goRight('s6')">
+    <button onclick="goRight('sDream')">
     Continue Our Story 🤍
     </button> </div>
 </div>
     
+<!-- SECTION: OUR DREAM -->
+<div class="section" id="sDream">
+
+  <h2>My Little Dream ✨</h2>
+
+  <div class="dream-image">
+    <img src="future.png" alt="Our Future">
+  </div>
+
+  <p class="dream-text">
+Sometimes I imagine a life where we’re happy and peaceful.  
+Maybe extremely successful...<br><br>
+
+Cooking together at midnight, with endless chapad chapad😂 
+Dancing to our favorite songs in the living room...mi shikavla asta tula..<br><br>
+
+You pretending to be serious while I fix your beard and hairs..  
+You drying my hair after a shower, acting like it’s a big responsibility... <br><br>
+
+Laughing at nothing...
+Choosing each other every day..<br><br>
+    
+Maybe in another chapter of life…🫠  
+it’s just us..happy, peaceful, choosing each other every day. 💗
+Not perfect...Just us...<br><br>
+
+  </p>
+
+  <button onclick="goRight('s6')">Next 🤍</button>
+
+</div>
+
   
 <!-- SECTION 6 -->
 <div class="section" id="s6">
@@ -601,6 +633,25 @@ function openLetter(){
   setTimeout(()=>{
     go('s8');
   },2800);
+  }
+  .dream-image img{
+  width:100%;
+  max-width:280px;
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+  margin:15px 0;
+  animation:softFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes softFloat{
+  from{ transform:translateY(0); }
+  to{ transform:translateY(-8px); }
+}
+
+.dream-text{
+  font-size:15px;
+  color:#6a2c4a;
+  margin-top:10px;
   }
 </script>
 
